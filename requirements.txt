@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pydantic-settings
+langchain
+langchain-ollama
+langchain-community
+langchain-chroma
+langchain-huggingface
+langchain-core
+rank-bm25
+flashrank
+pypdf
+unstructured[all-docs]
+pytest
+httpx
+loguru
+sentence-transformers

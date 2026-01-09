@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtual environment
+pip-delete-this-directory.txt
+pip-selfcheck.json
+
+# IDE / Editors
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Environment variables
+.env
+.env.local
+.env.* 
+
+# Chroma persistent database (large, local-only)
+data/
+chroma_db/
+chroma/
+
+# Ollama models and cache (large, local-only)
+ollama/
+
+# Logs
+*.log
+logs/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+*.eggs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+docs/your_cv.pdf
+docs/*.pdf
+docs/*.docx
