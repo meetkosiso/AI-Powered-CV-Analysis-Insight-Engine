@@ -41,55 +41,78 @@ Built with **FastAPI** + **LangChain** + **Ollama** + **Chroma** + Hybrid Search
 # Clone the repository
 git clone https://github.com/YOUR-USERNAME/advance-cv-insight.git
 cd advance-cv-insight
+```
 
 # Create and activate virtual environment
+
+```
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
+```
 
 # Install dependencies
-pip install -r requirements.txt
 
+```
+pip install -r requirements.txt
+```
 
 # Paths
+
+```
 DOCS_PATH=./docs
 CHROMA_PATH=./chroma_db
+```
 
 # LLM & Embeddings
+
+```
 OLLAMA_BASE_URL=http://localhost:11434
 LLM_MODEL=llama3.1:8b
 EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
-
+```
 
 # (Optional) Manually trigger indexing when documents change
+
+```
 python -m app.rag.indexer
+```
 
 # Start the FastAPI server
-uvicorn app.main:app --reload --port 8000
 
+```
+uvicorn app.main:app --reload --port 8000
+```
 
 # Run all tests
+
+```
 pytest
+```
 
 # Run with coverage
+
+```
 pytest --cov=app --cov-report=term-missing
+```
 
 # Run specific tests
+
+```
 pytest tests/test_indexer.py
 pytest tests/api/
-
+```
 
 advance-cv-insight/
 ├── app/
-│   ├── api/                # API routes & dependencies
-│   ├── core/               # Settings & configuration
-│   ├── models/             # Pydantic schemas
-│   ├── prompts/            # LLM prompt templates
-│   ├── rag/                # Indexing, retrieval & chain logic
-│   └── main.py
-├── tests/                  # pytest suite
-├── docs/                   # Place your CV PDFs here
-├── chroma_db/              # Chroma persistent storage (gitignored)
+│ ├── api/ # API routes & dependencies
+│ ├── core/ # Settings & configuration
+│ ├── models/ # Pydantic schemas
+│ ├── prompts/ # LLM prompt templates
+│ ├── rag/ # Indexing, retrieval & chain logic
+│ └── main.py
+├── tests/ # pytest suite
+├── docs/ # Place your CV PDFs here
+├── chroma_db/ # Chroma persistent storage (gitignored)
 ├── requirements.txt
-├── .env.example            # (recommended) template for .env
+├── .env.example # (recommended) template for .env
 └── README.md
-```
