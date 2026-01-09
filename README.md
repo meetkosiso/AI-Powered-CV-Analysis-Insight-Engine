@@ -101,18 +101,3 @@ pytest --cov=app --cov-report=term-missing
 pytest tests/test_indexer.py
 pytest tests/api/
 ```
-
-advance-cv-insight/
-├── app/
-│ ├── api/ # API routes & dependencies
-│ ├── core/ # Settings & configuration
-│ ├── models/ # Pydantic schemas
-│ ├── prompts/ # LLM prompt templates
-│ ├── rag/ # Indexing, retrieval & chain logic
-│ └── main.py
-├── tests/ # pytest suite
-├── docs/ # Place your CV PDFs here
-├── chroma_db/ # Chroma persistent storage (gitignored)
-├── requirements.txt
-├── .env.example # (recommended) template for .env
-└── README.md
