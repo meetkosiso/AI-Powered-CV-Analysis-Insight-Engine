@@ -39,7 +39,6 @@ Built with **FastAPI** + **LangChain** + **Ollama** + **Chroma** + Hybrid Search
 
 ````bash
 # Clone the repository
-git clone https://github.com/yourusername/advance-cv-insight.git
 cd advance-cv-insight
 
 # Create and activate virtual environment
