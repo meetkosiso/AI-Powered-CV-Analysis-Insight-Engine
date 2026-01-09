@@ -16,58 +16,80 @@ Built with **FastAPI** + **LangChain** + **Ollama** + **Chroma** + Hybrid Search
 
 ## 🛠️ Tech Stack
 
-# Clone the repository
+| Component           | Technology                             | Purpose                                |
+| ------------------- | -------------------------------------- | -------------------------------------- |
+| Backend             | FastAPI                                | High-performance API                   |
+| LLM                 | Ollama (local)                         | Answer generation                      |
+| Embeddings          | HuggingFace sentence-transformers      | Dense vector generation                |
+| Vector Store        | Chroma                                 | Persistent local vector database       |
+| Retrieval           | LangChain (Ensemble + Compression)     | Hybrid search + reranking              |
+| Reranker            | FlashRank                              | Fast & lightweight relevance reranking |
+| Document Processing | PyPDF + RecursiveCharacterTextSplitter | PDF loading & intelligent chunking     |
 
-git clone github.com
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.9–3.12
+- Ollama installed and running locally with a model pulled  
+  (example: `ollama pull llama3.1:8b` or `qwen2.5:7b`)
+- Some PDF resumes/CVs placed in the `docs/` folder
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/advance-cv-insight.git
 cd advance-cv-insight
 
 # Create and activate virtual environment
-
 python -m venv .venv
-source .venv/bin/activate # Windows: .venv\Scripts\activate
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 
 # Install dependencies
-
 pip install -r requirements.txt
 
-# Paths
 
+# Paths
 DOCS_PATH=./docs
 CHROMA_PATH=./chroma_db
 
 # LLM & Embeddings
-
 OLLAMA_BASE_URL=http://localhost:11434
 LLM_MODEL=llama3.1:8b
 EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
 
-# (Optional) Manually trigger indexing when documents change
 
+# (Optional) Manually trigger indexing when documents change
 python -m app.rag.indexer
 
 # Start the FastAPI server
-
 uvicorn app.main:app --reload --port 8000
 
-# Run all tests
 
+# Run all tests
 pytest
 
-# Run with coverage report
-
+# Run with coverage
 pytest --cov=app --cov-report=term-missing
 
+# Run specific tests
+pytest tests/test_indexer.py
+pytest tests/api/
+
+
 advance-cv-insight/
-├── app/ # Main application code
-│ ├── api/ # API routes & dependencies
-│ ├── core/ # Settings, configuration & dependencies
-│ ├── models/ # Pydantic schemas & data models
-│ ├── prompts/ # LLM prompt templates
-│ ├── rag/ # Indexing, retrieval, chains & RAG logic
-│ └── main.py # FastAPI application entry point
-├── tests/ # Test suite (pytest)
-├── docs/ # Place your CV/resume PDF files here
-├── chroma_db/ # Chroma vector database storage
-├── requirements.txt # Python dependencies
-├── .env.example # Example environment variables
-└── README.md # This file
+├── app/
+│   ├── api/                # API routes & dependencies
+│   ├── core/               # Settings & configuration
+│   ├── models/             # Pydantic schemas
+│   ├── prompts/            # LLM prompt templates
+│   ├── rag/                # Indexing, retrieval & chain logic
+│   └── main.py
+├── tests/                  # pytest suite
+├── docs/                   # Place your CV PDFs here
+├── chroma_db/              # Chroma persistent storage (gitignored)
+├── requirements.txt
+├── .env.example            # (recommended) template for .env
+└── README.md
+```
