@@ -31,9 +31,9 @@ Built with **FastAPI** + **LangChain** + **Ollama** + **Chroma** + Hybrid Search
 ### Prerequisites
 
 - Python 3.9–3.12
-- Ollama installed and running locally with a model pulled  
+- Ollama is installed and running locally with a model pulled  
   (example: `ollama pull llama3.1:8b` or `qwen2.5:7b`)
-- Some PDF resumes/CVs placed in the `docs/` folder
+- Some PDF resumes/CVs are placed in the `docs/` folder
 
 ### Installation
 
@@ -41,13 +41,6 @@ Built with **FastAPI** + **LangChain** + **Ollama** + **Chroma** + Hybrid Search
 # Clone the repository
 git clone https://github.com/YOUR-USERNAME/advance-cv-insight.git
 cd advance-cv-insight
-```
-
-# Create and activate virtual environment
-
-```
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
 ```
 
 # Install dependencies
