@@ -43,20 +43,20 @@ git clone https://github.com/YOUR-USERNAME/advance-cv-insight.git
 cd advance-cv-insight
 ```
 
-# Install dependencies
+### Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-# Paths
+### Paths
 
 ```
 DOCS_PATH=./docs
 CHROMA_PATH=./chroma_db
 ```
 
-# LLM & Embeddings
+### LLM & Embeddings
 
 ```
 OLLAMA_BASE_URL=http://localhost:11434
@@ -64,31 +64,31 @@ LLM_MODEL=llama3.1:8b
 EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
 ```
 
-# (Optional) Manually trigger indexing when documents change
+### (Optional) Manually trigger indexing when documents change
 
 ```
 python -m app.rag.indexer
 ```
 
-# Start the FastAPI server
+### Start the FastAPI server
 
 ```
 uvicorn app.main:app --reload --port 8000
 ```
 
-# Run all tests
+### Run all tests
 
 ```
 pytest
 ```
 
-# Run with coverage
+### Run with coverage
 
 ```
 pytest --cov=app --cov-report=term-missing
 ```
 
-# Run specific tests
+### Run specific tests
 
 ```
 pytest tests/test_indexer.py
